@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betty & Zakayo - Wedding Celebration</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3eae3',
+                            500: '#879b87',
+                            600: '#6a7f6a',
+                            700: '#526452',
+                            800: '#3e4d3e',
+                            900: '#273427',
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e6ca65',
+                            500: '#d4af37',
+                            600: '#aa8823',
+                        },
+                        ivory: '#fcfbf7',
+                        champagne: '#f7e7ce',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        cursive: ['Great Vibes', 'Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(30, 40, 30, 0.85)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-card {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-ivory text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-ivory/95 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="font-cursive text-3xl text-sage-800 font-bold tracking-wide">
+                B <span class="text-gold-500">&</span> Z
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-sage-800">
+                <a href="#about" class="hover:text-gold-600 transition">Our Story</a>
+                <a href="#details" class="hover:text-gold-600 transition">Ceremony & Reception</a>
+                <a href="#dresscode" class="hover:text-gold-600 transition">Attire Lookbook</a>
+                <a href="#rsvp" class="px-4 py-2 bg-sage-700 text-white rounded-full hover:bg-sage-800 transition shadow-sm">RSVP Now</a>
+            </div>
+
+            <!-- Audio Music Toggle Simulation -->
+            <button id="musicToggle" class="flex items-center space-x-2 text-xs bg-sage-100 hover:bg-sage-200 text-sage-800 px-3 py-2 rounded-full border border-sage-300 transition">
+                <i class="fas fa-music text-gold-500"></i>
+                <span id="musicText">Play Ambient Music</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="relative min-h-screen hero-bg flex items-center justify-center text-center text-white pt-20 px-4">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <p class="uppercase tracking-widest text-gold-300 text-sm font-medium">Together With Their Families</p>
+            
+            <h1 class="font-serif text-5xl md:text-7xl font-semibold leading-tight text-white drop-shadow-md">
+                Betty Wambui Mwangi<br>
+                <span class="font-cursive text-4xl md:text-6xl text-gold-400 font-normal my-2 block">&</span>
+                Zakayo Izanta Mogere
+            </h1>
+            
+            <div class="w-24 h-0.5 bg-gold-400 mx-auto my-4"></div>
+            
+            <p class="text-lg md:text-xl font-light italic tracking-wide text-gray-200">
+                Joyfully invite you to share in our joy and witness the beginning of our journey as husband and wife.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm tracking-widest uppercase font-medium">
+                <span class="px-4 py-2 border border-gold-400/50 rounded-full bg-black/30 backdrop-blur-sm">
+                    <i class="far fa-calendar-alt text-gold-400 mr-2"></i> Friday, 20th November 2026
+                </span>
+                <span class="px-4 py-2 border border-gold-400/50 rounded-full bg-black/30 backdrop-blur-sm">
+                    <i class="fas fa-map-marker-alt text-gold-400 mr-2"></i> Nairobi, Kenya
+                </span>
+            </div>
+
+            <div class="pt-8">
+                <a href="#rsvp" class="inline-block px-8 py-3.5 bg-gold-500 hover:bg-gold-600 text-slate-900 font-semibold rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                    Confirm Attendance (RSVP)
+                </a>
+            </div>
+        </div>
+
+        <a href="#countdown" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="py-16 bg-sage-800 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-2xl md:text-3xl text-gold-300 font-medium mb-2">Counting Down To The Big Day</h2>
+            <p class="text-sm text-sage-100/80 mb-8 uppercase tracking-widest">Friday, November 20, 2026 • 10:30 AM EAT</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-2xl mx-auto">
+                <div class="bg-sage-700/60 border border-gold-500/30 rounded-2xl p-4 shadow-inner">
+                    <span id="days" class="block font-serif text-4xl md:text-5xl font-bold text-gold-400">00</span>
+                    <span class="text-xs uppercase tracking-wider text-sage-100">Days</span>
+                </div>
+                <div class="bg-sage-700/60 border border-gold-500/30 rounded-2xl p-4 shadow-inner">
+                    <span id="hours" class="block font-serif text-4xl md:text-5xl font-bold text-gold-400">00</span>
+                    <span class="text-xs uppercase tracking-wider text-sage-100">Hours</span>
+                </div>
+                <div class="bg-sage-700/60 border border-gold-500/30 rounded-2xl p-4 shadow-inner">
+                    <span id="minutes" class="block font-serif text-4xl md:text-5xl font-bold text-gold-400">00</span>
+                    <span class="text-xs uppercase tracking-wider text-sage-100">Minutes</span>
+                </div>
+                <div class="bg-sage-700/60 border border-gold-500/30 rounded-2xl p-4 shadow-inner">
+                    <span id="seconds" class="block font-serif text-4xl md:text-5xl font-bold text-gold-400">00</span>
+                    <span class="text-xs uppercase tracking-wider text-sage-100">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Add to Calendar Button -->
+            <div class="mt-8">
+                <button onclick="downloadICS()" class="inline-flex items-center space-x-2 text-xs bg-sage-700 hover:bg-sage-600 border border-gold-400/40 text-gold-300 px-5 py-2.5 rounded-full transition shadow">
+                    <i class="far fa-calendar-plus"></i>
+                    <span>Add Event to Calendar (.ics)</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Couple Showcase Section -->
+    <section id="about" class="py-20 px-4 bg-ivory">
+        <div class="max-w-5xl mx-auto text-center space-y-12">
+            <div class="space-y-3">
+                <p class="font-cursive text-3xl text-gold-600">The Bride & Groom</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-sage-800 font-bold">Betty & Zakayo</h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center text-left">
+                <!-- African Couple Portrait Highlight -->
+                <div class="md:col-span-5 relative">
+                    <div class="rounded-3xl p-3 bg-gradient-to-tr from-gold-400 via-sage-500 to-gold-600 shadow-2xl">
+                        <img id="couplePhoto" 
+                             src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=800&auto=format&fit=crop" 
+                             alt="Betty & Zakayo - African Couple Portrait Placeholder" 
+                             class="rounded-2xl w-full h-[480px] object-cover shadow-inner object-top">
+                    </div>
+                    <div class="absolute -bottom-4 -right-2 bg-ivory p-3 rounded-2xl shadow-lg border border-gold-400/30 text-center">
+                        <span class="block font-serif text-xs text-sage-800 font-semibold">AFRICAN COUPLE PORTRAIT</span>
+                        <span class="text-[10px] text-gray-500">Preview Placeholder</span>
+                    </div>
+                </div>
+
+                <!-- Text info & story -->
+                <div class="md:col-span-7 space-y-6 md:pl-6">
+                    <h3 class="font-serif text-2xl text-sage-800 font-semibold">"Two Hearts, One Journey"</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We warmly welcome you to join us on our wedding day! As we exchange our vows under God's grace, we are truly blessed to have our family and friends surrounding us with love, blessings, and laughter.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-sage-50 rounded-2xl border border-sage-200">
+                            <p class="font-serif text-lg font-bold text-sage-800">Betty Wambui Mwangi</p>
+                            <p class="text-xs text-sage-600 mt-1 uppercase tracking-wider">The Bride</p>
+                        </div>
+                        <div class="p-4 bg-sage-50 rounded-2xl border border-sage-200">
+                            <p class="font-serif text-lg font-bold text-sage-800">Zakayo Izanta Mogere</p>
+                            <p class="text-xs text-sage-600 mt-1 uppercase tracking-wider">The Groom</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-gold-300/20 rounded-2xl border border-gold-400/40 text-xs text-sage-800 leading-relaxed italic">
+                        <i class="fas fa-quote-left text-gold-500 mr-2"></i>
+                        Love is patient, love is kind. It always protects, always trusts, always hopes, always perseveres.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ceremony & Reception Details -->
+    <section id="details" class="py-20 bg-sage-50/60 px-4">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <p class="font-cursive text-3xl text-gold-600">Where & When</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-sage-800 font-bold">Order of Events</h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Church Ceremony -->
+                <div class="glass-card rounded-3xl p-8 shadow-md relative overflow-hidden group hover:shadow-xl transition duration-300">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-slate-900 font-bold text-xs px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+                        10:30 AM EAT
+                    </div>
+                    
+                    <div class="w-14 h-14 bg-sage-100 text-sage-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-church"></i>
+                    </div>
+
+                    <h3 class="font-serif text-2xl text-sage-800 font-bold mb-1">Church Ceremony</h3>
+                    <p class="text-xs text-gold-600 font-bold uppercase tracking-wider mb-4">Catholic Holy Mass Vows</p>
+                    
+                    <div class="space-y-3 text-sm text-slate-600 mb-6">
+                        <p class="flex items-start">
+                            <i class="fas fa-clock text-gold-500 mt-1 mr-3"></i>
+                            <span><strong>Time:</strong> 10:30 AM Promptly</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span><strong>Venue:</strong> Our Lady of the Rosary Catholic Parish, Ridgeways, Nairobi</span>
+                        </p>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Our+Lady+of+the+Rosary+Catholic+Parish+Ridgeways+Nairobi" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center w-full px-5 py-3 bg-sage-700 hover:bg-sage-800 text-white font-medium rounded-xl text-xs uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-directions mr-2"></i> Open Location in Google Maps
+                    </a>
+                </div>
+
+                <!-- Reception -->
+                <div class="glass-card rounded-3xl p-8 shadow-md relative overflow-hidden group hover:shadow-xl transition duration-300">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-slate-900 font-bold text-xs px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+                        01:30 PM EAT
+                    </div>
+
+                    <div class="w-14 h-14 bg-sage-100 text-sage-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+
+                    <h3 class="font-serif text-2xl text-sage-800 font-bold mb-1">Wedding Reception</h3>
+                    <p class="text-xs text-gold-600 font-bold uppercase tracking-wider mb-4">Feast, Music & Celebrations</p>
+                    
+                    <div class="space-y-3 text-sm text-slate-600 mb-6">
+                        <p class="flex items-start">
+                            <i class="fas fa-clock text-gold-500 mt-1 mr-3"></i>
+                            <span><strong>Time:</strong> 1:30 PM EAT</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span><strong>Venue:</strong> Bustani Gardens, Redhill, Nairobi</span>
+                        </p>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Bustani+Gardens+Redhill+Nairobi" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center w-full px-5 py-3 bg-sage-700 hover:bg-sage-800 text-white font-medium rounded-xl text-xs uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-directions mr-2"></i> Open Location in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- African Dress Code & Wedding Scene Showcase -->
+    <section id="dresscode" class="py-20 bg-ivory text-center px-4">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div>
+                <p class="font-cursive text-3xl text-gold-600">Style Guide & Theme</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-sage-800">Dress Code: Formal Attire</h2>
+                <p class="text-sm text-slate-500 mt-2 max-w-xl mx-auto">
+                    We kindly ask our loved ones to dress in elegant formal attire matching our wedding colour palette: Sage Green, Ivory, Champagne, and Gold.
+                </p>
+            </div>
+
+            <!-- Palette Swatches -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div class="p-3 bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-[#879b87] mx-auto shadow mb-2"></div>
+                    <span class="block text-xs font-semibold text-slate-800">Sage Green</span>
+                    <span class="text-[10px] text-slate-400 font-mono">#879B87</span>
+                </div>
+                <div class="p-3 bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-[#fcfbf7] border border-slate-300 mx-auto shadow mb-2"></div>
+                    <span class="block text-xs font-semibold text-slate-800">Ivory</span>
+                    <span class="text-[10px] text-slate-400 font-mono">#FCFBF7</span>
+                </div>
+                <div class="p-3 bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-[#f7e7ce] mx-auto shadow mb-2"></div>
+                    <span class="block text-xs font-semibold text-slate-800">Champagne</span>
+                    <span class="text-[10px] text-slate-400 font-mono">#F7E7CE</span>
+                </div>
+                <div class="p-3 bg-white rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3e5ab] mx-auto shadow mb-2"></div>
+                    <span class="block text-xs font-semibold text-slate-800">Gold</span>
+                    <span class="text-[10px] text-slate-400 font-mono">#D4AF37</span>
+                </div>
+            </div>
+
+            <!-- Featured Mock African Wedding Theme Scene -->
+            <div class="relative bg-sage-900 rounded-3xl overflow-hidden text-left shadow-xl border border-gold-400/40">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop" 
+                     alt="African Wedding Reception Mock Scene - Sage Green and Gold Decor" 
+                     class="w-full h-80 md:h-96 object-cover opacity-80">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent p-6 md:p-10 flex flex-col justify-end">
+                    <span class="inline-block bg-gold-500 text-slate-950 text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full w-max mb-2">
+                        Garden Decor Concept
+                    </span>
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Sage & Gold African Garden Reception</h3>
+                    <p class="text-sage-100 text-xs md:text-sm max-w-2xl mt-1">
+                        Mock setup featuring lush green floral arrangements, warm golden accents, and ivory drapery at Bustani Gardens, Redhill.
+                    </p>
+                </div>
+            </div>
+
+            <!-- African Models Lookbook Grid -->
+            <div class="space-y-4 pt-4">
+                <h3 class="font-serif text-2xl font-bold text-sage-800">Attire Inspiration (African Models)</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
+                    <!-- African Model 1: Sage & Ivory Formal Outfit -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" 
+                             alt="African Woman Formal Wedding Guest Attire" 
+                             class="w-full h-80 object-cover object-top">
+                        <div class="p-5 space-y-1">
+                            <span class="text-[10px] uppercase tracking-wider bg-sage-100 text-sage-800 px-2.5 py-0.5 rounded-full font-bold">Sage & Ivory</span>
+                            <h4 class="font-serif font-semibold text-sage-800 text-base pt-1">African Formal Gown</h4>
+                            <p class="text-xs text-slate-500">Elegant tailor-made gown featuring rich sage green fabrics with subtle gold embroidery.</p>
+                        </div>
+                    </div>
+
+                    <!-- African Model 2: African Gentleman Suit -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" 
+                             alt="African Male Formal Suit" 
+                             class="w-full h-80 object-cover object-top">
+                        <div class="p-5 space-y-1">
+                            <span class="text-[10px] uppercase tracking-wider bg-gold-300/40 text-gold-700 px-2.5 py-0.5 rounded-full font-bold">Gentlemen Attire</span>
+                            <h4 class="font-serif font-semibold text-sage-800 text-base pt-1">African Bespoke Suit</h4>
+                            <p class="text-xs text-slate-500">Bespoke suit in sage green or classic champagne with gold lapel accents.</p>
+                        </div>
+                    </div>
+
+                    <!-- African Model 3: Gold & Champagne Elegance -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition sm:col-span-2 md:col-span-1">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop" 
+                             alt="African Woman Evening Glamour" 
+                             class="w-full h-80 object-cover object-top">
+                        <div class="p-5 space-y-1">
+                            <span class="text-[10px] uppercase tracking-wider bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full font-bold">Champagne & Gold</span>
+                            <h4 class="font-serif font-semibold text-sage-800 text-base pt-1">Glamorous African Touch</h4>
+                            <p class="text-xs text-slate-500">Warm champagne silk paired with rich traditional metallic gold headpiece & accessories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section id="rsvp" class="py-20 bg-sage-800 text-white px-4">
+        <div class="max-w-xl mx-auto space-y-8">
+            <div class="text-center space-y-2">
+                <p class="font-cursive text-3xl text-gold-300">Join Us</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold">Kindly RSVP</h2>
+                <p class="text-xs text-sage-200 uppercase tracking-widest">Please respond by 20th October 2026</p>
+            </div>
+
+            <form id="rsvpForm" onsubmit="handleRSVP(event)" class="bg-sage-700/80 p-8 rounded-3xl border border-gold-400/30 space-y-5 shadow-2xl backdrop-blur-sm">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-sage-200 mb-1">Full Name *</label>
+                    <input type="text" id="guestName" required placeholder="e.g. Jane Wanjiru Mwangi" class="w-full px-4 py-3 rounded-xl bg-sage-800/80 border border-sage-600 text-white placeholder-sage-400 focus:outline-none focus:border-gold-400 transition text-sm">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sage-200 mb-1">Phone Number *</label>
+                        <input type="tel" id="guestPhone" required placeholder="e.g. 0720 000 000" class="w-full px-4 py-3 rounded-xl bg-sage-800/80 border border-sage-600 text-white placeholder-sage-400 focus:outline-none focus:border-gold-400 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sage-200 mb-1">Number of Guests</label>
+                        <select id="guestCount" class="w-full px-4 py-3 rounded-xl bg-sage-800/80 border border-sage-600 text-white focus:outline-none focus:border-gold-400 transition text-sm">
+                            <option value="1">1 Person</option>
+                            <option value="2">2 Persons</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-sage-200 mb-1">Attending Status *</label>
+                    <div class="grid grid-cols-2 gap-3 mt-1">
+                        <label class="flex items-center space-x-2 p-3 rounded-xl bg-sage-800/80 border border-sage-600 cursor-pointer hover:border-gold-400 transition">
+                            <input type="radio" name="attendance" value="attending" checked class="accent-gold-400">
+                            <span class="text-sm">Joyfully Accept</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-3 rounded-xl bg-sage-800/80 border border-sage-600 cursor-pointer hover:border-gold-400 transition">
+                            <input type="radio" name="attendance" value="declined" class="accent-gold-400">
+                            <span class="text-sm">Regretfully Decline</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-sage-200 mb-1">Message / Best Wishes</label>
+                    <textarea id="guestMessage" rows="3" placeholder="Leave a heartfelt note for Betty & Zakayo..." class="w-full px-4 py-3 rounded-xl bg-sage-800/80 border border-sage-600 text-white placeholder-sage-400 focus:outline-none focus:border-gold-400 transition text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-gold-600 text-slate-900 font-bold rounded-xl shadow-lg transition duration-200 uppercase tracking-wider text-xs">
+                    Submit RSVP Response
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Direct RSVP Contact Info -->
+    <section class="py-12 bg-ivory border-t border-gold-500/10 text-center px-4">
+        <div class="max-w-2xl mx-auto space-y-4">
+            <h3 class="font-serif text-lg text-sage-800 font-semibold">Direct RSVP Contacts</h3>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+                <a href="https://wa.me/254720590892" target="_blank" class="flex items-center space-x-2 text-sage-700 hover:text-gold-600 transition">
+                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                    <span><strong>Betty Mwangi:</strong> 0720 590 892</span>
+                </a>
+                <a href="https://wa.me/254722453239" target="_blank" class="flex items-center space-x-2 text-sage-700 hover:text-gold-600 transition">
+                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                    <span><strong>Zakayo Izanta:</strong> 0722 453 239</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-sage-900 text-center text-sage-300 text-xs">
+        <p class="font-cursive text-2xl text-gold-400 mb-2">We can't wait to celebrate with you!</p>
+        <p>© 2026 Betty Wambui Mwangi & Zakayo Izanta Mogere Wedding</p>
+    </footer>
+
+    <!-- RSVP Modal Confirmation -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden px-4">
+        <div class="bg-ivory max-w-md w-full p-6 rounded-3xl text-center space-y-4 border border-gold-400 shadow-2xl">
+            <div class="w-12 h-12 bg-sage-100 text-sage-700 rounded-full flex items-center justify-center mx-auto text-2xl">
+                <i class="fas fa-heart text-gold-500"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-sage-800 font-bold">Thank You!</h3>
+            <p id="modalText" class="text-sm text-slate-600 leading-relaxed"></p>
+            <button onclick="closeModal()" class="px-6 py-2.5 bg-sage-700 hover:bg-sage-800 text-white rounded-full font-medium text-xs uppercase tracking-wider transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /* Countdown Timer Logic */
+        const weddingDate = new Date("November 20, 2026 10:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p class='text-2xl font-serif text-gold-400'>Today is the Big Day!</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* RSVP Form Submission Handler */
+        function handleRSVP(event) {
+            event.preventDefault();
+            const name = document.getElementById("guestName").value;
+            const status = document.querySelector('input[name="attendance"]:checked').value;
+            
+            const modalText = document.getElementById("modalText");
+            if (status === "attending") {
+                modalText.innerText = `Dear ${name}, your RSVP has been recorded! We are so excited to celebrate with you on November 20th.`;
+            } else {
+                modalText.innerText = `Thank you for letting us know, ${name}. You will be warmly missed on our special day!`;
+            }
+
+            document.getElementById("rsvpModal").classList.remove("hidden");
+            document.getElementById("rsvpForm").reset();
+        }
+
+        function closeModal() {
+            document.getElementById("rsvpModal").classList.add("hidden");
+        }
+
+        /* Ambient Audio Toggle Simulation */
+        let isPlaying = false;
+        document.getElementById("musicToggle").addEventListener("click", function() {
+            isPlaying = !isPlaying;
+            const musicIcon = this.querySelector('i');
+            if (isPlaying) {
+                document.getElementById("musicText").innerText = "Ambient Sound Playing...";
+                musicIcon.classList.add("animate-spin");
+            } else {
+                document.getElementById("musicText").innerText = "Play Ambient Music";
+                musicIcon.classList.remove("animate-spin");
+            }
+        });
+
+        /* Generate Calendar .ICS File */
+        function downloadICS() {
+            const icsData = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'BEGIN:VEVENT',
+                'SUMMARY:Betty Wambui Mwangi & Zakayo Izanta Mogere Wedding',
+                'DESCRIPTION:Join Betty & Zakayo as they exchange vows! Ceremony at 10:30 AM at Our Lady of the Rosary Catholic Parish Ridgeways, followed by Reception at Bustani Gardens, Redhill.',
+                'LOCATION:Our Lady of the Rosary Catholic Parish, Ridgeways, Nairobi',
+                'DTSTART:20261120T073000Z',
+                'DTEND:20261120T150000Z',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\n');
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Betty_and_Zakayo_Wedding.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
